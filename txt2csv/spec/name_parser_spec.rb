@@ -65,14 +65,8 @@ describe Parse do
     expect(return_array).to eq(["Lady","","","Madona","III"])
   end
 
-  it "should parse prefixes and last names and suffixes" do
-    return_array = Parse.parse_names(prefixes, suffixes, "Lady Madona III")
-    expect (return_array).to eq(["Lady","","","Madona","III"])
-  end
-
   it "should parse the whole banana" do
-    pending
-    return_array = Parse.parse_names(prefixes, suffixes, "Lady Samuel Madona-Richey III")
+    return_array = Parse.parse_names(prefixes, suffixes, "Lady Mary Samuel Madona-Richey III")
     expect(return_array).to eq(["Lady","Mary","Samuel","Madona-Richey","III"])
   end
 
