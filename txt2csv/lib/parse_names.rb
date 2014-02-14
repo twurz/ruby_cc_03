@@ -13,8 +13,19 @@ class Parse
     if suffixes.include? word.last
       parsed_name[:suffix] = word.pop
     end
-    parsed_name[:last] = word.last
+    parsed_name[:last] = word.last    
+
+
+    if prefixes.include? word.first 
+      parsed_name[:pre] = word.shift
+    elsif word.count > 1
+      parsed_name[:first] = word.shift
+    end
+
+    if word.count > 1
+      parsed_name[:middle] = word.first
+    end
+
     parsed_name.values
   end
-
 end
